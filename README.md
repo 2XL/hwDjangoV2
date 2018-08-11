@@ -13,3 +13,8 @@ pip-compile --upgrade # all
 pip-compile --upgrade-package [package-name] [or -P [package-name]] # specific package
 pip-sync [requirements.txt] [requirements-dev.txt] # update virtual env to match the content of `requirements.txt`
 ```
+
+
+
+### The template layer
+

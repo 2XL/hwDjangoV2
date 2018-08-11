@@ -1,0 +1,19 @@
+
+<!--if the db query is empty , noop, else print the query result query string-->
+{% if latest_question_list %}
+<ul>
+    {% for question in latest_question_list %}
+
+    # Partially hardcoded URLS
+    <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    # Fully Programed URLs
+    <li><a href="{% url 'detail' question.id %}/">{{ question.question_text }}</a></li>
+    <p>url 'detail' refers to · path('<int:question_id>/', views.detail, name='detail'),</p>
+    # Fully Programmed with namespaced url.pattern reference
+    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+
+    {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
