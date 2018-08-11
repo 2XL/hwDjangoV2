@@ -36,7 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'polls.apps.PollsConfig'
+    'polls.apps.PollsConfig',
+    # 'graphql.apps.GraphqlConfig',
+    'django_graphiql',
 ]
 
 MIDDLEWARE = [
