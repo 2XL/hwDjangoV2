@@ -1,4 +1,4 @@
-"""mysite URL Configuration
+"""project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -16,10 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
+from graphene_django.views import GraphQLView
+# from default.cookbook.schema import schema
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('path/', include('polls.urls')),
+    # path('graphql/', GraphQLView.as_view(graphiql=True, scheme=schema)),
     # path('graphiql/', include('django_graphiql.urls')),
-
+    # url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=schema)),
 ]
+
+#
+# http://localhost:8000/graphql
+#
